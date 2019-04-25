@@ -5,7 +5,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building..."
-                sh apt-get install figlet
+                sh label: '', script: 'apt install figlet'
                 sh figlet "Building"
             }
         }
