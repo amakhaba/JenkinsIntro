@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
 
@@ -5,7 +7,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building..."
-                sh label: '', script: 'make'
+                sh 'make'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint:true 
             }
         }
@@ -15,7 +17,7 @@ pipeline {
                 /* `make check` returns non-zero on test faiures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh label: '', script: 'make check || true'
+                sh 'make check || true'
                 junit '**/target/*.xml'
             }
         }
