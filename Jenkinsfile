@@ -5,7 +5,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building..."
-                sh 'make'
+                sh label: '', script: 'make'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint:true 
             }
         }
@@ -15,7 +15,7 @@ pipeline {
                 /* `make check` returns non-zero on test faiures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh 'make check || true'
+                sh label: '', script: 'make check || true'
                 junit '**/target/*.xml'
             }
         }
