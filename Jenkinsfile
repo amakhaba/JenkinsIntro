@@ -5,8 +5,6 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building..."
-                sh label: '', script: 'pip install figlet'
-                sh label: '', script: 'figlet Building...'
             }
         }
         stage("Test") {
