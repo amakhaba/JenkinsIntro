@@ -7,8 +7,8 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building..."
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint:true 
+                sh "echo 'Currently Building....'> test.txt"
+                archiveArtifacts artifacts: 'test.txt', fingerprint:true 
             }
         }
         stage("Test") {
