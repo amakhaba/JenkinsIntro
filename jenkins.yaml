@@ -95,7 +95,7 @@ unclassified:
       \  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:30)"
   location:
     adminAddress: "address not configured yet <nobody@nowhere>"
-    url: "http://anele-XPS-15-9570:8080/"
+    url: "http://localhost:8080/"
   mailer:
     adminAddress: "address not configured yet <nobody@nowhere>"
     charset: "UTF-8"
