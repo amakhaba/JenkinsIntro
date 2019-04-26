@@ -1,0 +1,134 @@
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "jenadmin"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  downloadSettings:
+    useBrowser: false
+  remotingCLI:
+    enabled: false
+  sSHD:
+    port: -1
+unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildStepOperation:
+    enabled: false
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\n\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubPluginConfig:
+    hookUrl: "http://anele-XPS-15-9570:8080/github-webhook/"
+  gitSCM:
+    createAccountBasedOnEmail: false
+  jiraProjectProperty:
+    sites: "FAILED TO EXPORT hudson.plugins.jira.JiraProjectProperty$DescriptorImpl#sites:\
+      \ io.jenkins.plugins.casc.ConfiguratorException: Can't read attribute 'url'\
+      \ from [Lhudson.plugins.jira.JiraSite;@497b49cf  at io.jenkins.plugins.casc.Attribute._getValue(Attribute.java:256)\
+      \  at io.jenkins.plugins.casc.Attribute.getValue(Attribute.java:175)  at io.jenkins.plugins.casc.impl.configurators.DataBoundConfigurator.describe(DataBoundConfigurator.java:239)\
+      \  at io.jenkins.plugins.casc.Attribute.describe(Attribute.java:197)  at io.jenkins.plugins.casc.Configurator.describe(Configurator.java:162)\
+      \  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:106)\
+      \  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.lambda$describe$3(GlobalConfigurationCategoryConfigurator.java:99)\
+      \  at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)\
+      \  at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)\
+      \  at java.util.Iterator.forEachRemaining(Iterator.java:116)  at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)\
+      \  at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)\
+      \  at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)\
+      \  at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)\
+      \  at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)\
+      \  at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\
+      \  at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)\
+      \  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:99)\
+      \  at io.jenkins.plugins.casc.impl.configurators.GlobalConfigurationCategoryConfigurator.describe(GlobalConfigurationCategoryConfigurator.java:30)"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://anele-XPS-15-9570:8080/"
+  mailer:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    charset: "UTF-8"
+    useSsl: false
+  pollSCM:
+    pollingThreadCount: 10
+  timestamperConfig:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  ant:
+    defaultProperties:
+    - installSource:
+        installers:
+        - "antFromApache"
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  gradle:
+    defaultProperties:
+    - installSource:
+        installers:
+        - "gradleInstaller"
+  jdk:
+    defaultProperties:
+    - installSource:
+        installers:
+        - jdkInstaller:
+            acceptLicense: false
+  maven:
+    defaultProperties:
+    - installSource:
+        installers:
+        - "maven"
