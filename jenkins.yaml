@@ -1,4 +1,5 @@
 jenkins:
+  systemMessage: "AutomatingGuy demo: configured automatically with JCasC plugin\n\n"
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
